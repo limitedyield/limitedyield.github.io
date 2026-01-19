@@ -1,57 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LIMITED YIELD</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INFINITE YIELD</title>
+
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #fff;
+      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      border-bottom: 1px solid #222;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 1px;
+      background: #ff3b3b;
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      padding: 120px 20px 40px;
       text-align: center;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
+
+    .hero-title {
+      font-size: 60px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 2em;
-      color: #aaa;
+
+    .hero-title .infinity {
+      color: #ff3b3b;
     }
-    .logo {
-      width: 150px;
-      margin-bottom: 1em;
+
+    .hero-subtitle {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: #bbb;
+      margin-bottom: 20px;
     }
-    .button {
-      background-color: #007BFF;
-      color: white;
-      padding: 12px 24px;
-      margin: 10px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1em;
+
+    .hero-names {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid #ff3b3b;
+      background: transparent;
+      color: #ff3b3b;
       cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: background 0.2s ease, color 0.2s ease;
     }
-    .button:hover {
-      background-color: #0056b3;
+
+    .btn:hover {
+      background: #ff3b3b;
+      color: #000;
+    }
+
+    .discord {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #bbb;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .discord:hover {
+      opacity: 1;
+    }
+
+    .discord-icon {
+      width: 20px;
+      height: 20px;
+      background: #5865f2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    footer {
+      font-size: 10px;
+      color: #555;
+      text-align: right;
+      padding: 6px 10px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
     }
   </style>
 </head>
+
 <body>
-  <img src="" alt="LIMITED YIELD Logo" class="logo">
-  <h1>LIMITED YIELD</h1>
-  <p>Tools, scripts, and more — your gateway to Roblox enhancements.</p>
-  <a href="https://discord.gg/En27vYwukV" class="button">Download</a>
-  <a href="https://discord.gg/En27vYwukV" class="button">Join</a>
+  <header>
+    <div class="logo">INFINITE YIELD</div>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#download">DOWNLOAD</a>
+      <a href="#docs">DOCUMENTATION</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <div>
+      <h1 class="hero-title">INFINITE <span class="infinity">∞</span> YIELD</h1>
+      <p class="hero-subtitle">ROBLOX ADMIN COMMAND SCRIPT</p>
+
+      <p class="hero-names">
+        EDGE // ZWOLF // MOON // HUNTER // TOON // PEYTON // ATP
+      </p>
+
+      <div class="buttons">
+        <button class="btn" onclick="location.href='#download'">Download</button>
+        <button class="btn" onclick="location.href='#docs'">Documentation</button>
+      </div>
+
+      <a class="discord" href="https://discord.com" target="_blank">
+        <div class="discord-icon">D</div>
+        Join our Discord
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    Activate Windows<br>
+    Go to Settings to activate Windows
+  </footer>
 </body>
 </html>
+
